@@ -98,18 +98,20 @@
 
 
 
-  <meta name="description" content="前言结束">
+  <meta name="description" content="前言模式介绍在之前简单工厂模式中，我们介绍了简单工厂模式的缺陷是违背了开放-封闭原则。如果在面馆中添加了烤海参，那将会修改waiter工厂类。违背了类内封闭原则。 还以面馆为例，现在两种面，用一个服务员来卖就可以，如果这个服务员不干了，后面卖面的厨师需要兼职顶替服务员，但是厨师又不能离开灶台，就将模式改成了窗口排队式，一队海参炒面，另一队辣根汤面。每个窗口分别有一个厨师放饭，一个会做海参炒面，另一">
 <meta name="keywords" content="设计模式,C++,工厂模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入浅出《设计模式》之工厂模式（C++）">
 <meta property="og:url" content="http://www.erguangqiang.com/2019/03/10/factory/index.html">
 <meta property="og:site_name" content="尔广强&#39;s Blog">
-<meta property="og:description" content="前言结束">
+<meta property="og:description" content="前言模式介绍在之前简单工厂模式中，我们介绍了简单工厂模式的缺陷是违背了开放-封闭原则。如果在面馆中添加了烤海参，那将会修改waiter工厂类。违背了类内封闭原则。 还以面馆为例，现在两种面，用一个服务员来卖就可以，如果这个服务员不干了，后面卖面的厨师需要兼职顶替服务员，但是厨师又不能离开灶台，就将模式改成了窗口排队式，一队海参炒面，另一队辣根汤面。每个窗口分别有一个厨师放饭，一个会做海参炒面，另一">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-10T04:58:25.586Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/03/10/A9wFLd.png">
+<meta property="og:updated_time" content="2019-03-10T15:09:12.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入浅出《设计模式》之工厂模式（C++）">
-<meta name="twitter:description" content="前言结束">
+<meta name="twitter:description" content="前言模式介绍在之前简单工厂模式中，我们介绍了简单工厂模式的缺陷是违背了开放-封闭原则。如果在面馆中添加了烤海参，那将会修改waiter工厂类。违背了类内封闭原则。 还以面馆为例，现在两种面，用一个服务员来卖就可以，如果这个服务员不干了，后面卖面的厨师需要兼职顶替服务员，但是厨师又不能离开灶台，就将模式改成了窗口排队式，一队海参炒面，另一队辣根汤面。每个窗口分别有一个厨师放饭，一个会做海参炒面，另一">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/03/10/A9wFLd.png">
 
 
 
@@ -338,7 +340,7 @@
                 
               
 
-              <time title="创建时间：2019-03-10 12:41:06 / 修改时间：12:58:25" itemprop="dateCreated datePublished" datetime="2019-03-10T12:41:06+08:00">2019-03-10</time>
+              <time title="创建时间：2019-03-10 12:41:06 / 修改时间：23:09:12" itemprop="dateCreated datePublished" datetime="2019-03-10T12:41:06+08:00">2019-03-10</time>
             
 
             
@@ -395,7 +397,11 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="模式介绍"><a href="#模式介绍" class="headerlink" title="模式介绍"></a>模式介绍</h2><p>在之前简单工厂模式中，我们介绍了简单工厂模式的缺陷是违背了开放-封闭原则。如果在面馆中添加了烤海参，那将会修改waiter工厂类。违背了类内封闭原则。</p>
+<p>还以面馆为例，现在两种面，用一个服务员来卖就可以，如果这个服务员不干了，后面卖面的厨师需要兼职顶替服务员，但是厨师又不能离开灶台，就将模式改成了窗口排队式，一队海参炒面，另一队辣根汤面。每个窗口分别有一个厨师放饭，一个会做海参炒面，另一个会做辣根汤面。老板觉得这种模式挺好，万一来了一个会做烤海参的，就只需要开一个烤海参的窗口就好了，不需要重新要服务员学习，因为烤海参的就会卖。这就变成了工厂模式。</p>
+<h2 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h2><p>这里涉及到2种类①我，客户端，排队买饭。②做饭厨师类，工厂类，为我生成饭。③菜品类，生成菜品类。具体关系如下UML类图：</p>
+<p><img src="https://s2.ax1x.com/2019/03/10/A9wFLd.png" alt></p>
+<h2 id="代码实例"><a href="#代码实例" class="headerlink" title="代码实例"></a>代码实例</h2><h2 id="编译运行结果"><a href="#编译运行结果" class="headerlink" title="编译运行结果"></a>编译运行结果</h2><h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1>
       
     </div>
 
@@ -588,7 +594,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结束"><span class="nav-number">2.</span> <span class="nav-text">结束</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模式介绍"><span class="nav-number">1.1.</span> <span class="nav-text">模式介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UML类图"><span class="nav-number">1.2.</span> <span class="nav-text">UML类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实例"><span class="nav-number">1.3.</span> <span class="nav-text">代码实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译运行结果"><span class="nav-number">1.4.</span> <span class="nav-text">编译运行结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结束"><span class="nav-number">2.</span> <span class="nav-text">结束</span></a></li></ol></div>
             
 
           </div>
